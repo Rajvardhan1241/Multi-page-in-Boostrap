@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>About Us</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Section 1 */
+
+    /* Ensure section takes full width */
+    .ab-heading {
+        width: 100%;
+        background-color: #000;
+    }
+
+    /* Responsive Video Container */
+    .video-container {
+        position: relative;
+        width: 100%;
+        min-height: 50vh;
+        /* Adjust based on your needs */
+        max-height: 600px;
+        /* Prevents it from being too large on big screens */
+        overflow: hidden;
+    }
+
+    /* Ensure the video covers the entire section */
+    .video-container video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Centered Title & Text */
+    .head-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "Poppins", sans-serif;
+        width: 80%;
+        text-align: center;
+        color: white;
+    }
+
+    /* Responsive Font Sizes */
+    .head-title h1 {
+        font-size: 3vw;
+        /* Adjusts based on screen width */
+    }
+
+    .head-title p {
+        font-size: 1.5vw;
+    }
+
+    /* 🔹 Media Queries for Better Responsiveness */
+    @media (max-width: 768px) {
+        .video-container {
+            min-height: 40vh;
+            /* Slightly smaller for tablets */
+        }
+
+        .head-title h1 {
+            font-size: 5vw;
+            /* Adjust heading size for smaller screens */
+        }
+
+        .head-title p {
+            font-size: 4vw;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .video-container {
+            min-height: 30vh;
+            /* Smaller height for mobile */
+        }
+
+        .head-title h1 {
+            font-size: 5.5vw;
+            /* Larger font for small screens */
+        }
+
+        .head-title p {
+            font-size: 3vw;
+        }
+    }
+
+    /* Section 2 */
+    .abinf {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        padding: 50px 15px;
+    }
+
+    .fundraiser-section {
+        background: url('world-map.png') no-repeat center;
+        background-size: cover;
+        padding: 60px 0;
+        position: relative;
+    }
+
+    .fundraiser-image {
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fundraiser-image img.main-img {
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        object-fit: cover;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .small-image {
+        position: absolute;
+        width: 20%;
+        height: 35%;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        object-fit: cover;
+        animation: popIn 1.2s ease-in-out;
+        padding: 1%;
+    }
+
+    .small-image.one {
+        top: 10%;
+        left: -30px;
+    }
+
+    .small-image.two {
+        bottom: 10%;
+        right: -20px;
+    }
+
+    @media (max-width: 768px) {
+        .fundraiser-image {
+            flex-direction: column;
+        }
+
+        .fundraiser-image img.main-img {
+            width: 230px;
+            height: 230px;
+        }
+
+        .small-image {
+            width: 80px;
+            height: 80px;
+        }
+
+        .small-image.one {
+            top: 5%;
+            left: 10px;
+        }
+
+        .small-image.two {
+            bottom: 5%;
+            right: 10px;
+        }
+    }
+
+    .fundraiser-content {
+        padding-left: 30px;
+        animation: slideIn 1s ease-in-out;
+    }
+
+    .decorative-dots {
+        position: absolute;
+        top: 45%;
+        left: 10%;
+        width: 80px;
+        height: 80px;
+        background: url('dots-pattern.png') no-repeat;
+        background-size: contain;
+        opacity: 0.5;
+        transform: translateY(-50%);
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes popIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .fundraiser-image img {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .fundraiser-image img:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Section 3 */
+    .ab-apart {
+        background-color: #ecf0f1;
+    }
+
+    .ab-apart h1 {
+        text-align: center;
+        color: #0f1e4a;
+        padding: 2%;
+    }
+
+    .apart-last {
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    /* From Uiverse.io by alexruix */
+    .card {
+        width: 100%;
+        border-radius: 20px;
+        background: #fff;
+        position: relative;
+        padding: 18px;
+        border: 2px solid #c3c6ce;
+        transition: 0.5s ease-out;
+        overflow: visible;
+        gap: 1%;
+    }
+
+    .card-details {
+        color: black;
+        height: 100%;
+        gap: 1%;
+        display: grid;
+    }
+
+
+    .text-title {
+        font-weight: bold;
+        color: #024098;
+        /* text-align: justify; */
+    }
+
+
+    .card:hover {
+        border-color: #024098;
+        box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    /* Section team */
+
+
+
+    .team-section {
+        background-color: #ecf0f1;
+        padding: 60px 0;
+    }
+
+    .team-section h1 {
+        color: #0f1e4a;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .team-member {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .team-member img {
+        margin-bottom: 10px;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .team-member img:hover {
+        transform: scale(1.1);
+    }
+
+
+    h1 {
+        font-family: "Poppins", serif;
+        font-size: 2rem;
+    }
+
+    .team-section h4 {
+        margin-top: 2%;
+        color: rgb(0, 0, 0);
+    }
+
+    .team-section p {
+        font-family: "Poppins", serif;
+        font-size: 100%;
+        color: rgb(0, 0, 0);
+    }
+
+    .copy {
+        margin: 0;
+    }
+
+    /* Back to Top Button Styling */
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: #dc7633;
+        color: white;
+        border: none !important;
+        border-color: none !important;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        cursor: pointer;
+
+        transition: opacity 0.3s, transform 0.3s;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .back-to-top:hover {
+        transform: scale(1.1);
+        background-color: #b54e1d;
+    }
+
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: #dc7733af;
+        color: white;
+        border: none !important;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        cursor: pointer;
+        box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
+        transition: opacity 0.3s, transform 0.3s;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .back-to-top:hover {
+        transform: scale(1.1);
+        background-color: #b54e1d;
+    }
+
+    /* media query */
+    @media (max-width: 760px) {
+        .ab-info h1 {
+            font-size: 2rem;
+        }
+
+        .ab-apart h1 {
+            font-size: 2rem;
+        }
+
+        .ab-offerings h1 {
+            font-size: 2rem;
+        }
+
+        .team-section h1 {
+            font-size: 2rem;
+        }
+
+    }
+</style>
+<style>
+    /* From Uiverse.io by gharsh11032000 */
+    /* Card Styling */
+    .card1 {
+        max-width: 320px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 1.5rem;
+        background-color: #dc880a;
+        /* Black background */
+        padding: 1.5rem;
+        box-shadow: 0px 0px 25px rgba(15, 14, 14, 0.3);
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+    }
+
+    /* Row Styling */
+    .internships-dur-row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    /* Price Styling */
+    .price {
+        font-size: 3rem;
+        font-weight: 600;
+        color: #F9F9F8;
+        /* White text */
+        margin-bottom: 1rem;
+    }
+
+    /* List Styling */
+    .lists {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.75rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: #FFFFFF;
+        /* Ensures full white color */
+        padding: 0;
+        list-style: none;
+    }
+
+    .list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Button Styling */
+    .action {
+        margin-top: 2rem;
+        width: 100%;
+        border: 2px solid #FFFFFF;
+        border-radius: 9999px;
+        background-color: #FFFFFF;
+        padding: 0.625rem 1.5rem;
+        font-weight: 600;
+        text-align: center;
+        font-size: 0.875rem;
+        color: #db9e10;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: inline-block;
+    }
+
+    /* Hover Effect for Button */
+    .action:hover {
+        color: #FFFFFF;
+        background-color: transparent;
+    }
+</style>
+
+<body>
+    <!-- sec1 -->
+    <header>
+        <div id="navbar"></div>
+    </header>
+
+    <!-- sec2 -->
+    <section class="ab-heading">
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="cm.mp4" type="video/mp4" style="width: 100%;">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Inverted Slanted Overlapping Div -->
+            <div class="head-title">
+                <h1> Empowering Future Innovators! </h1>
+                <p>Bridging the gap between academic knowledge and real-world corporate demands.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- sec3 -->
+    <section class="abinf">
+        <div class="container fundraiser-section">
+            <div class="row align-items-center p-2">
+                <div class="col-md-6 position-relative">
+                    <div class="fundraiser-image">
+                        <img src="cc.jpg" alt="Fundraiser" class="main-img img-fluid">
+                        <img src="p.1.png" alt="Child" class="small-image one">
+                        <img src="p.1.png" alt="Group of Kids" class="small-image two">
+                    </div>
+                    <div class="decorative-dots"></div>
+                </div>
+                <div class="col-md-6 fundraiser-content " data-aos="fade-up">
+                    <p>Welcome to the premier resource for budding IT specialists, <b>RH</b>. By offering
+                        practical internship programs and training focused on the sector, we are dedicated to turning
+                        professional aspirations into reality.</p>
+                    <p>We aim to close the gap between academic knowledge and real-world experience by providing
+                        innovative programs that adhere to industry standards. Menstech gives professionals of all skill
+                        levels the resources, know-how, and guidance they need to thrive in the cutthroat job market of
+                        today.</p>
+                    <a href="#" class="btn btn-warning">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- sec4 -->
+    <section class="ab-apart" style="min-height: 100vh; align-content: center;">
+        <div class="container">
+            <h1>What Sets Us Apart</h1>
+            <div class=" container text-apart p-0">
+                <!-- From Uiverse.io by alexruix -->
+                <div class="card">
+                    <div class="card-details">
+                        <p class="text-title">Customized Learning Tracks</p>
+                        <p class="text-body">Flexible training options of 3 months, 6 months, or 1 year to match your
+                            career goals.</p>
+                    </div>
+                </div><br>
+
+                <div class="card">
+                    <div class="card-details">
+                        <p class="text-title">Hands-On Experience </p>
+                        <p class="text-body">Learn from industry veterans with years of experience in IT and digital
+                            marketing.</p>
+                    </div>
+                </div><br>
+                <div class="card">
+                    <div class="card-details">
+                        <p class="text-title">State-of-the-Art Infrastructure</p>
+                        <p class="text-body">A modern and dynamic learning environment equipped with the latest
+                            technology.</p>
+                    </div>
+                </div>
+
+                <p class="apart-last">At <b>RH</b>, we believe in learning by doing, ensuring our students gain
+                    practical expertise, confidence,
+                    and
+                    problem-solving abilities.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- sec5 -->
+
+    <section class="container">
+        <div class="row internships-dur-row justify-content-center">
+            <div class=" col-md-3 d-flex justify-content-center">
+                <div class="card1">
+                    <h1 class="price">IT Training</h1>
+                    <p>IT training equips individuals with the skills and knowledge needed for information technology
+                        careers, covering areas like programming, cybersecurity. </p>
+                    <a href="#" class="action">Get started</a>
+                </div>
+            </div>
+
+            <div class=" col-md-3 d-flex justify-content-center">
+                <div class="card1">
+                    <h2 class="price">Internship Training</h2>
+                    <p>A programming internship provides students and recent graduates with practical, on-the-job
+                        experience in software development, enabling them to apply theoretical. </p>
+                    <a href="#" class="action">Get started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(function () {
+            $("#navbar").load("navbar.html");
+        });
+        $(function () {
+            $("#footer").load("footer.html");
+        });
+    });
+</script>
+<script>
+    AOS.init();
+    document.addEventListener("DOMContentLoaded", function () {
+        const backToTopButton = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 100) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+
+        backToTopButton.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    });
+</script>
+
+</html>
